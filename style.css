@@ -20,44 +20,33 @@ h1, h2 {
   text-align: center;
 }
 
-h3 {
-  line-height: 30px;
-  margin: 0;
-}
-
-h4 {
-  line-height: 25px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-
-strong {
-  font-size: 20px;
-}
-
-p {
-  margin-top: 0px;
-}
-
 .grid-container {
   display: grid;
   grid-auto-flow:column;
   grid-template-columns: 3fr 3fr repeat(5, 1.4fr);
-  grid-template-rows: repeat(8, minmax(auto, max-content));
   justify-items: center;
-  align-items: center;
+  align-items:flex-start;
+}
+
+.search-container {
+  grid-column-start: 1;
+}
+
+.current {
+  grid-column-start: 2;
+}
+
+.five-day {
+  grid-column: 3/8;
 }
 
 #search {
-  grid-area: 1 / 1 / 1 / 1;
   width: 100%;
   justify-self: left;
   align-self: end;
 }
 
 input {
-  grid-area: 2 / 1 / 2 / 1;
   justify-self: left;
   width:80%;
   height:60%;
@@ -79,22 +68,33 @@ button {
 }
 
 ul {
-  grid-area: 3 / 1 / 9 /1;
+  grid-area: 4 / 1 ;
   list-style-type: none;
   justify-self: left;
 }
 
+h3 {
+  line-height: 30px;
+  margin: 0;
+}
+
+h4 {
+  line-height: 25px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+strong {
+  font-size: 20px;
+}
+
+p {
+  margin-top: 0px;
+}
+
 #current-icon {
   margin: 0px;
-}
-
-#current {
-  grid-column: 1 / 2 / 1 / 2;
-}
-
-#five-day {
-  grid-column: 3/8;
-  grid-row: 1;
 }
 
 /* columns stack when viewport is 768px or smaller */

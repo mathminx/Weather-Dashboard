@@ -78,8 +78,8 @@ function getWeather(searchCity) {
     cityListItem.textContent = (city.city);
     cityList.appendChild(cityListItem);
     cityListItem.onclick = function() {
-      getWeather(cityListItem.textContent);
-    }
+    getWeather(cityListItem.textContent);
+  }
     });
     // Save the updated array to local storage
     localStorage.setItem("savedCities", JSON.stringify(cityArray));
@@ -134,7 +134,7 @@ function getForecast(fiveDayURL) {
     console.log(firstForecastTime, typeof firstForecastTime);
     let utcForecastHour = Number(firstForecastTime.substring(11, 13))
     let localForecastHour = utcForecastHour - timezone/3600;
-    if (localForecastHour > 24) {
+    if (localForecastHour >= 24) {
       localForecastHour = localForecastHour-24
     }
     console.log(localForecastHour);

@@ -12,20 +12,17 @@
   
   <header>
     <h1>How's the Weather?</h1>
-    <h2></h2>
+    <h2> </h2>
   </header>
-
-  
 
   <div class="grid-container">
 
-    <div class="search-container">
-      <strong id="search">Search for a city:</strong>
+    <div class="search">
+      <h3 id="search">Search for a city:</h3>
       <input type="text" id="search-city">
       <button id="search-button">Search</button>
       </form>
       <ul id="city-list"></ul>
-  
     </div>
 
     <div class="current">
@@ -38,42 +35,53 @@
       <p id="current-humidity"></p>
       <p id="current-wind"></p>
     </div>
-  
-    <div class="five-day">
-      <h3 >Five Day Forecast</h3>
-      <h4 id="day-1"></h4>
+
+    <div class = "five-day">
+      <h3>Five Day Forecast</h3>
+    </div>
+
+    <div class="day-1">
+      <h4 id="day-1-date"></h4>
       <img id="day-1-icon"></img>
       <p id="day-1-desc"></p>
       <p id="day-1-temp"></p>
       <p id="day-1-feels-like"></p>
       <p id="day-1-humidity"></p>
       <p id="day-1-wind"></p>
+    </div>
 
-      <h4 id="day-2"></h4>
+    <div class="day-2">
+      <h4 id="day-2-date"></h4>
       <img id="day-2-icon"></img>
       <p id="day-2-desc"></p>
       <p id="day-2-temp"></p>
       <p id="day-2-feels-like"></p>
       <p id="day-2-humidity"></p>
       <p id="day-2-wind"></p>
+    </div>
 
-      <h4 id="day-3"></h4>
+    <div class="day-3">
+      <h4 id="day-3-date"></h4>
       <img id="day-3-icon"></img>
       <p id="day-3-desc"></p>
       <p id="day-3-temp"></p>
       <p id="day-3-feels-like"></p>
       <p id="day-3-humidity"></p>
       <p id="day-3-wind"></p>
+    </div>
 
-      <h4 id="day-4"></h4>
+    <div class="day-4">
+      <h4 id="day-4-date"></h4>
       <img id="day-4-icon"></img>
       <p id="day-4-desc"></p>
       <p id="day-4-temp"></p>
       <p id="day-4-feels-like"></p>
       <p id="day-4-humidity"></p>
       <p id="day-4-wind"></p>
+    </div>
 
-      <h4 id="day-5"></h4>
+    <div class="day-5">
+      <h4 id="day-5-date"></h4>
       <img id="day-5-icon"></img>
       <p id="day-5-desc"></p>
       <p id="day-5-temp"></p>
@@ -81,6 +89,7 @@
       <p id="day-5-humidity"></p>
       <p id="day-5-wind"></p>
     </div>
+
   </div>
 
   <script src="./script.js"></script>
@@ -89,6 +98,7 @@
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </body>

@@ -85,8 +85,10 @@ function getWeather(searchCity) {
     // Save the updated array to local storage
     localStorage.setItem("savedCities", JSON.stringify(cityArray));
     let currentURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=metric&appid=610436e018c9609da870c73640ddef6a"
+    console.log("ready to get current");
     getCurrentWeather(currentURL, fullName);
     let fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&units=metric&appid=610436e018c9609da870c73640ddef6a&units=metric";
+    console.log("ready to get 5 day");
     getForecast(fiveDayURL);
   });
 }
@@ -139,6 +141,7 @@ function getForecast(fiveDayURL) {
         let getId = "day-" + dayNum;
         let getDate = getId + "-date";
         document.getElementById(getDate).innerHTML = dayjs.unix(forecastData.list[i].dt).format("dddd" + "<br>" + "MMMM D");
+        console
         let getIcon = getId + "-icon";
         let iconCode = forecastData.list[i].weather[0].icon;
         document.getElementById(getIcon).src = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
@@ -159,6 +162,7 @@ function getForecast(fiveDayURL) {
         let windSpeed = forecastData.list[i].wind.speed;
         document.getElementById(getWind).innerHTML = parseInt(windSpeed) + " km/h";
         dayNum = dayNum + 1;
+        console.log(dayNum);
       }
     }
   })

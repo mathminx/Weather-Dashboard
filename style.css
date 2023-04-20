@@ -156,6 +156,11 @@ p {
   margin: 0px;
 }
 
+li:hover {
+  color:  rgb(248, 235, 114);
+  cursor: pointer;
+}
+
 /* columns stack when viewport is 768px or smaller */
 @media screen and (max-width:768px) {
   .grid-container {

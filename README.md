@@ -42,10 +42,8 @@ MIT
 
 ## Badges
 
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
-
-![alt text](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
-
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com) 
+![alt text](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white) 
 ![alt text]( https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 
 

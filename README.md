@@ -24,11 +24,17 @@ The project is deployed via GitHub Pages.
 
 
 
-![image](https://user-images.githubusercontent.com/122234007/233454103-5b3a7e79-9ede-4ed4-9575-5d67843e66dc.png)
+![image](https://user-images.githubusercontent.com/122234007/233457486-a57ad5f2-be26-4ba8-ad00-a6dadd216081.png)
+
+
+![image](https://user-images.githubusercontent.com/122234007/233457603-5d9e3ab1-10f6-4682-8ede-8bd9b6e1dd4f.png)
+
+
+![image](https://user-images.githubusercontent.com/122234007/233457934-1fdb39c2-9ade-459d-826a-357f24285358.png)
 
 
 
-![image](https://user-images.githubusercontent.com/122234007/233454320-6f2ca7a5-9222-4ba6-b481-7dc28628e6ae.png)
+
 
 
 

@@ -16,6 +16,8 @@ cityArray.forEach(city => {
   cityListItem.textContent = (city.city);
   cityList.appendChild(cityListItem);
   cityListItem.onclick = function() {
+    let searchBox = document.getElementById("search-city");
+    searchBox.value = cityListItem.textContent;
     getWeather(cityListItem.textContent);
   }
 });
@@ -32,14 +34,12 @@ searchButton.addEventListener("click", function (event) {
 });
 //Get the latitude and logitude of the searched city
 function getWeather(searchCity) {
-  console.log(searchCity);
   let geocodeURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + searchCity + "&appid=" + myAPI;
   fetch(geocodeURL)
   .then(function (response) {
     return response.json();
   })
   .then(function (geoData) {
-    console.log(geoData);
     if (geoData.length === 0) {
       alert("City not found - please try again");
       searchCity = "";
@@ -47,7 +47,6 @@ function getWeather(searchCity) {
     }
     // Extract city, state, and country from response
     let cityDetails = geoData[0];
-    console.log(cityDetails);
     let city = cityDetails.name
     let country = cityDetails.country;
     let state = cityDetails.state;
@@ -78,8 +77,10 @@ function getWeather(searchCity) {
     cityListItem.textContent = (city.city);
     cityList.appendChild(cityListItem);
     cityListItem.onclick = function() {
-    getWeather(cityListItem.textContent);
-  }
+      let searchBox = document.getElementById("search-city");
+      searchBox.value = cityListItem.textContent;
+      getWeather(cityListItem.textContent);
+    }
     });
     // Save the updated array to local storage
     localStorage.setItem("savedCities", JSON.stringify(cityArray));
@@ -96,10 +97,8 @@ function getCurrentWeather (currentURL, fullName) {
     return response.json();
   })
   .then(function (weatherData) {
-    console.log("Current ", weatherData);
     let mainCardTitle = document.querySelector("h2");
     mainCardTitle.innerHTML = fullName;
-    console.log(weatherData.dt);
     let weatherDate = dayjs(weatherData.weather.dt).format("dddd" + "<br>" + "MMMM D, YYYY");
     document.getElementById("current-date").innerHTML = weatherDate;
     let iconCode = weatherData.weather[0].icon;
@@ -127,21 +126,16 @@ function getForecast(fiveDayURL) {
     return response.json();
   })
   .then(function (forecastData) {
-    console.log(forecastData);
     timezone = forecastData.city.timezone;
-    console.log(forecastData.list);
     let firstForecastTime = forecastData.list[0].dt_txt;
-    console.log(firstForecastTime, typeof firstForecastTime);
     let utcForecastHour = Number(firstForecastTime.substring(11, 13))
     let localForecastHour = utcForecastHour - timezone/3600;
     if (localForecastHour >= 24) {
       localForecastHour = localForecastHour-24
     }
-    console.log(localForecastHour);
     let dayNum = 1;
     for (let i=0; i<forecastData.list.length; i++) {
       if (localForecastHour - Number(forecastData.list[i].dt_txt.substring(11, 13)) >= 0 && localForecastHour - Number(forecastData.list[i].dt_txt.substring(11, 13)) < 3)  {
-        console.log(forecastData.list[i].dt_txt);
         let getId = "day-" + dayNum;
         let getDate = getId + "-date";
         document.getElementById(getDate).innerHTML = dayjs.unix(forecastData.list[i].dt).format("dddd" + "<br>" + "MMMM D");
@@ -164,7 +158,6 @@ function getForecast(fiveDayURL) {
         let getWind = getId + "-wind"
         let windSpeed = forecastData.list[i].wind.speed;
         document.getElementById(getWind).innerHTML = parseInt(windSpeed) + " km/h";
-        console.log("Done with day " + dayNum);
         dayNum = dayNum + 1;
       }
     }

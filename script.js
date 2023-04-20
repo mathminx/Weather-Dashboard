@@ -15,6 +15,9 @@ cityArray.forEach(city => {
   let cityListItem = document.createElement("li");
   cityListItem.textContent = (city.city);
   cityList.appendChild(cityListItem);
+  cityListItem.onclick = function() {
+    getWeather(cityListItem.textContent);
+  }
 });
 //Add event listener to the search button
 let searchButton = document.getElementById("search-button");
@@ -73,8 +76,10 @@ function getWeather(searchCity) {
     let cityList = document.getElementById("city-list");
     let cityListItem = document.createElement("li");
     cityListItem.textContent = (city.city);
-    console.log(city.city);
     cityList.appendChild(cityListItem);
+    cityListItem.onclick = function() {
+      getWeather(cityListItem.textContent);
+    }
     });
     // Save the updated array to local storage
     localStorage.setItem("savedCities", JSON.stringify(cityArray));

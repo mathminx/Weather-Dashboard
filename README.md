@@ -22,8 +22,16 @@ The project is deployed via GitHub Pages.
 
 ## Usage
 
-Background Image
-https://www.ventusky.com/
+
+
+![image](https://user-images.githubusercontent.com/122234007/233454103-5b3a7e79-9ede-4ed4-9575-5d67843e66dc.png)
+
+
+
+![image](https://user-images.githubusercontent.com/122234007/233454320-6f2ca7a5-9222-4ba6-b481-7dc28628e6ae.png)
+
+
+
 
 
 ## License

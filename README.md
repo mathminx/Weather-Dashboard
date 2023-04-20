@@ -1,22 +1,10 @@
-# Challenge 6 - Weather Dashboard
+# Weather Dashboard
 
 ## Description
 
-Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. 
+This weather dashboard retrieves weather data for a city chosen by the user. The application includes a search option, a list of cities previously searched, along with current weather conditions and a five-day forecast for the selected city. If a new city is input (i.e. one that has not previously been searched), it is added to the list of searched cities, which is saved to local storage.The weather data is retrieved from https://openweathermap.org using coordinates rather than a city name. The application runs in the browser and features dynamically updated HTML and CSS. 
 
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The base URL should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
 
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
-
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
-
-The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for one of the cities.
-
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-
-## Acceptance Criteria
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history

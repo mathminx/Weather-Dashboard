@@ -9,6 +9,8 @@ let myCities = JSON.parse(localStorage.getItem("savedCities"));
 if (myCities !== null) {
   cityArray = myCities;
 }
+
+
 // Display the array of cities
 cityArray.forEach(city => {
   let cityList = document.getElementById("city-list");
@@ -21,6 +23,8 @@ cityArray.forEach(city => {
     getWeather(cityListItem.textContent);
   }
 });
+
+
 //Add event listener to the search button
 let searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", function (event) {
@@ -121,23 +125,29 @@ function getCurrentWeather (currentURL, fullName) {
 
 //get the five-Day forecast
 function getForecast(fiveDayURL) {
+  console.log("getting 5 day");
   fetch(fiveDayURL)
   // fetch() returns a promise. When we have received a response from the server,
   // the promise's `then()` handler is called with the response.
   .then(function (response) {
+    console.log("return response.json");
     return response.json();
   })
   .then(function (forecastData) {
+    console.log(forecastData);
     timezone = forecastData.city.timezone;
+    console.log(timezone);
     let firstForecastTime = forecastData.list[0].dt_txt;
     let utcForecastHour = Number(firstForecastTime.substring(11, 13))
     let localForecastHour = utcForecastHour - timezone/3600;
     if (localForecastHour >= 24) {
       localForecastHour = localForecastHour-24
     }
+    console.log(localForecastHour);
     let dayNum = 1;
     for (let i=0; i<forecastData.list.length; i++) {
       if (localForecastHour - Number(forecastData.list[i].dt_txt.substring(11, 13)) >= 0 && localForecastHour - Number(forecastData.list[i].dt_txt.substring(11, 13)) < 3)  {
+        console.log(localForecastHour, Number(forecastData.list[i].dt_txt.substring(11, 13)));
         let getId = "day-" + dayNum;
         let getDate = getId + "-date";
         document.getElementById(getDate).innerHTML = dayjs.unix(forecastData.list[i].dt).format("dddd" + "<br>" + "MMMM D");

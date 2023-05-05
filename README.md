@@ -12,6 +12,8 @@ This weather dashboard retrieves weather data for a city chosen by the user. The
 
 The project is deployed via GitHub Pages.
 
+https://mathminx.github.io/Weather-Dashboard/
+
 
 ## Usage
 
